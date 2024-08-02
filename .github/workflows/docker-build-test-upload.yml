@@ -2,7 +2,7 @@ name: Download a parent image, build a new one, and test it; then upload the ima
 
 env:
   REGISTRY: quay.io
-  OWNER: ${{ github.repository_owner }}
+  OWNER: mediahuisdap
 
 on:
   workflow_call:
