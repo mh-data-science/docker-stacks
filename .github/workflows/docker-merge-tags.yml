@@ -1,8 +1,8 @@
 name: Download all tags from GitHub artifacts and create multi-platform manifests
 
 env:
-  OWNER: ${{ github.repository_owner }}
-  PUSH_TO_REGISTRY: ${{ (github.repository_owner == 'jupyter' || github.repository_owner == 'mathbunnyru') && (github.ref == 'refs/heads/main' || github.event_name == 'schedule') }}
+  OWNER: mediahuisdap
+  PUSH_TO_REGISTRY: true
 
 on:
   workflow_call:

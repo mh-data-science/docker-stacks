@@ -2,7 +2,7 @@ name: Download a Docker image and its tags from GitHub artifacts, apply them, an
 
 env:
   REGISTRY: quay.io
-  OWNER: ${{ github.repository_owner }}
+  OWNER: mediahuisdap
   PUSH_TO_REGISTRY: true
 
 on:
