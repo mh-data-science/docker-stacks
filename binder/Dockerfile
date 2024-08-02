@@ -3,11 +3,11 @@
 
 # https://quay.io/repository/jupyter/base-notebook?tab=tags
 ARG REGISTRY=quay.io
-ARG OWNER=jupyter
+ARG OWNER=mediahuisdap
 ARG BASE_CONTAINER=$REGISTRY/$OWNER/base-notebook:2024-05-27
 FROM $BASE_CONTAINER
 
-LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
+LABEL maintainer="Mediahuis DAP <tps-data-dataplatform@mediahuis.be>"
 
 # Fix: https://github.com/hadolint/hadolint/wiki/DL4006
 # Fix: https://github.com/koalaman/shellcheck/wiki/SC3014
