@@ -95,18 +95,18 @@ jobs:
         image-variant:
           [
             { image: docker-stacks-foundation, variant: default },
-            # { image: base-notebook, variant: default },
-            # { image: minimal-notebook, variant: default },
-            # { image: scipy-notebook, variant: default },
-            # { image: datascience-notebook, variant: default },
+            { image: base-notebook, variant: default },
+            { image: minimal-notebook, variant: default },
+            { image: scipy-notebook, variant: default },
+            { image: datascience-notebook, variant: default },
           ]
     needs:
       [
         x86_64-foundation,
-        # x86_64-base,
-        # x86_64-minimal,
-        # x86_64-scipy,
-        # x86_64-datascience,
+        x86_64-base,
+        x86_64-minimal,
+        x86_64-scipy,
+        x86_64-datascience,
       ]
     if: ${{ !contains(github.event.pull_request.title, '[FAST_BUILD]') }}
 
@@ -116,17 +116,17 @@ jobs:
       image: ${{ matrix.image-variant.image }}
       variant: ${{ matrix.image-variant.variant }}
     secrets:
-      REGISTRY_USERNAME: ${{ secrets.QUAY_USERNAME }}
-      REGISTRY_TOKEN: ${{ secrets.QUAY_ROBOT_TOKEN }}
+      REGISTRY_USERNAME: ${{ secrets.REGISTRY_USERNAME }}
+      REGISTRY_TOKEN: ${{ secrets.REGISTRY_TOKEN }}
     strategy:
       matrix:
         image-variant:
           [
             { image: docker-stacks-foundation, variant: default },
-            # { image: base-notebook, variant: default },
-            # { image: minimal-notebook, variant: default },
-            # { image: scipy-notebook, variant: default },
-            # { image: datascience-notebook, variant: default },
+            { image: base-notebook, variant: default },
+            { image: minimal-notebook, variant: default },
+            { image: scipy-notebook, variant: default },
+            { image: datascience-notebook, variant: default },
           ]
     needs: [ x86_64-images-tag-push]
     if: |
